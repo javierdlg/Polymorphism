@@ -1,0 +1,27 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<OutDir>$(MSBuildThisFileDirectory)..\artifacts\Cpp\$(Platform)\$(Configuration)\$(MSBuildProjectName)\</OutDir>
+	<IntDir>$(MSBuildThisFileDirectory)..\artifacts\obj\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>
+	<LocalDebuggerCommand>$(TargetPath)</LocalDebuggerCommand>
+	<LocalDebuggerWorkingDirectory>$(ProjectDir)</LocalDebuggerWorkingDirectory>
+	<DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+	<ClCompile>
+	  <WarningLevel>Level4</WarningLevel>
+	  <TreatWarningAsError>true</TreatWarningAsError>
+	  <LanguageStandard>stdcpp20</LanguageStandard>
+	  <ConformanceMode>true</ConformanceMode>
+	  <ExceptionHandling>Sync</ExceptionHandling>
+	  <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+	  <Optimization Condition="'$(Configuration)' == 'Debug'">Disabled</Optimization>
+	  <Optimization Condition="'$(Configuration)' == 'Release'">MaxSpeed</Optimization>
+	  <RuntimeLibrary Condition="'$(Configuration)' == 'Debug'">MultiThreadedDebugDLL</RuntimeLibrary>
+	  <RuntimeLibrary Condition="'$(Configuration)' == 'Release'">MultiThreadedDLL</RuntimeLibrary>
+	</ClCompile>
+	<Link>
+	  <SubSystem>Console</SubSystem>
+	  <GenerateDebugInformation>true</GenerateDebugInformation>
+	</Link>
+  </ItemDefinitionGroup>
+</Project>

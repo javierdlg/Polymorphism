@@ -1,0 +1,20 @@
+.vs/
+**/bin/
+**/obj/
+artifacts/
+Rust/target/
+*.user
+
+# Local assistant state, diagnostics, and personal scratch experiments.
+session-state/
+CSharp/02-Guided/Program.cs
+*.log
+*.dmp
+*.etl
+*.binlog
+.env
+.env.*
+*.pfx
+*.p12
+*.pem
+*.key

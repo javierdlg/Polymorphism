@@ -1,0 +1,10 @@
+[workspace]
+members = ["01-Problem", "02-Guided", "03-Solution"]
+resolver = "3"
+
+[profile.dev]
+opt-level = 0
+debug = 2
+
+[profile.release]
+debug = 1

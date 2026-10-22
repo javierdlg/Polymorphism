@@ -1,0 +1,38 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/Cpp/">
+    <File Path="Cpp/GUIDE.md" />
+    <Project Path="Cpp/01-Problem/Cpp.Problem.vcxproj" Id="18b60ff5-9c34-4520-acda-9c927ac7e101" />
+    <Project Path="Cpp/02-Guided/Cpp.Guided.vcxproj" Id="18b60ff5-9c34-4520-acda-9c927ac7e102" />
+    <Project Path="Cpp/03-Solution/Cpp.Solution.vcxproj" Id="18b60ff5-9c34-4520-acda-9c927ac7e103" />
+  </Folder>
+  <Folder Name="/CSharp/">
+    <File Path="CSharp/GUIDE.md" />
+    <Project Path="CSharp/01-Problem/CSharp.Problem.csproj">
+      <Platform Solution="*|ARM64" Project="ARM64" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="CSharp/02-Guided/CSharp.Guided.csproj">
+      <Platform Solution="*|ARM64" Project="ARM64" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+    <Project Path="CSharp/03-Solution/CSharp.Solution.csproj">
+      <Platform Solution="*|ARM64" Project="ARM64" />
+      <Platform Solution="*|x64" Project="x64" />
+    </Project>
+  </Folder>
+  <Folder Name="/Rust/">
+    <File Path="Rust/GUIDE.md" />
+    <Project Path="Rust/01-Problem/Rust.Problem.vcxproj" Id="18b60ff5-9c34-4520-acda-9c927ac7e201" />
+    <Project Path="Rust/02-Guided/Rust.Guided.vcxproj" Id="18b60ff5-9c34-4520-acda-9c927ac7e202" />
+    <Project Path="Rust/03-Solution/Rust.Solution.vcxproj" Id="18b60ff5-9c34-4520-acda-9c927ac7e203" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+    <File Path="SPEC.md" />
+    <File Path="Verify.ps1" />
+  </Folder>
+</Solution>

@@ -1,0 +1,18 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+	<RustTarget Condition="'$(Platform)' == 'ARM64'">aarch64-pc-windows-msvc</RustTarget>
+	<RustTarget Condition="'$(Platform)' == 'x64'">x86_64-pc-windows-msvc</RustTarget>
+	<RustProfile>debug</RustProfile>
+	<RustProfile Condition="'$(Configuration)' == 'Release'">release</RustProfile>
+	<CargoConfiguration Condition="'$(Configuration)' == 'Release'">--release</CargoConfiguration>
+	<OutDir>$(MSBuildThisFileDirectory)target\$(RustTarget)\$(RustProfile)\</OutDir>
+	<IntDir>$(MSBuildThisFileDirectory)..\artifacts\obj\$(MSBuildProjectName)\$(Platform)\$(Configuration)\</IntDir>
+	<NMakeOutput>$(OutDir)$(RustExecutable).exe</NMakeOutput>
+	<NMakeBuildCommandLine>cd /d "$(ProjectDir)" &amp;&amp; cargo +stable build --locked --manifest-path Cargo.toml --target $(RustTarget) $(CargoConfiguration)</NMakeBuildCommandLine>
+	<NMakeCleanCommandLine>cd /d "$(ProjectDir)" &amp;&amp; cargo +stable clean --manifest-path Cargo.toml --target $(RustTarget) -p $(RustPackage) $(CargoConfiguration)</NMakeCleanCommandLine>
+	<NMakeReBuildCommandLine>$(NMakeCleanCommandLine) &amp;&amp; $(NMakeBuildCommandLine)</NMakeReBuildCommandLine>
+	<LocalDebuggerCommand>$(NMakeOutput)</LocalDebuggerCommand>
+	<LocalDebuggerWorkingDirectory>$(ProjectDir)</LocalDebuggerWorkingDirectory>
+	<DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>
